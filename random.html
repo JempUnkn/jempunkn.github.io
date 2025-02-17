@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Content</title>
+    <link rel="stylesheet" href="random-styles.css">
+    <link rel="icon" type="image/png" href="assets/profile-picture.png">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="random.html">Random</a></li>
+        </ul>
+    </nav>
+    <header class="header">
+        <h1>Random Videos📺</h1>
+        <p>A collection of random videos.</p>
+    </header>
+    <main class="main-content">
+        <div class="media-grid">
+            <!-- Existing Media Cards -->
+            <div class="media-card">
+                <video src="https://shuggreal.vercel.app/assets/sukana.mp4" controls></video>
+            </div>
+            <div class="media-card">
+                <video src="https://shuggreal.vercel.app/assets/YoutubeDL_Average&#32;Blue&#32;Lock&#32;Watcher_&#32;Eggo-ist_1080p.mp4" controls></video>
+            </div>
+            <div class="media-card">
+                <video src="https://shuggreal.vercel.app/assets/short.mp4" controls></video>
+            </div>
+            <div class="media-card">
+                <video src="https://shuggreal.vercel.app/assets/gym.mp4" controls></video>
+            </div>
+            <div class="media-card">
+                <video src="https://shuggreal.vercel.app/assets/YoutubeDL_Caseoh's&#32;Domain&#32;Expansion_1080p.mp4" controls></video>
+            </div>
+            <div class="media-card">
+                <video src="https://shuggreal.vercel.app/assets/What&#32;the&#32;non-sorcerers&#32;see.mp4" controls></video>
+            </div>
+            <div class="media-card">
+                <video src="https://shuggreal.vercel.app/assets/Gojoirl.mp4" controls></video>
+            </div>
+            <!-- New Media Cards -->
+            <div class="media-card">
+                <video src="https://shuggreal.vercel.app/assets/YoutubeDL_Im&#32;Skyler&#32;White&#32;yo&#32;vine&#32;boom_720p.mp4" controls></video>
+            </div>
+            <div class="media-card">
+                <video src="https://shuggreal.vercel.app/assets/YoutubeDL_vsauce&#32;michael.mp4" controls></video>
+            </div>
+            <div class="media-card">
+                <video src="https://shuggreal.vercel.app/assets/yt1s.com&#32;-&#32;Jujutsu&#32;Kaisen&#32;IRL&#32;What&#32;to&#32;call&#32;short&#32;people&#32;pt&#32;2_1080p.mp4" controls></video>
+            </div>
+            <div class="media-card">
+                <video src="https://shuggreal.vercel.app/assets/Toji&#32;Fushiguro&#32;workout&#32;5&#32;(RESULTS&#32;GUARANTEED).mp4" controls></video>
+            </div>
+            <div class="media-card">
+                <video src="https://shuggreal.vercel.app/assets/yt1s.com&#32;-&#32;Harry&#32;Squatter&#32;the&#32;Boy&#32;Who&#32;Lifted&#32;MASHLE_1080p.mp4" controls></video>
+            </div>
+            <div class="media-card">
+                <video src="https://shuggreal.vercel.app/assets/blind.mp4" controls></video>
+            </div>
+            <div class="media-card">
+                <video src="https://shuggreal.vercel.app/assets/bowling.mp4" controls></video>
+            </div>
+            <div class="media-card">
+                <video src="https://shuggreal.vercel.app/assets/video7.mp4" controls></video>
+            </div>
+            <div class="media-card">
+                <video src="https://shuggreal.vercel.app/assets/video8.mp4" controls></video>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mediaCards = document.querySelectorAll('.media-card video');
+
+            mediaCards.forEach(media => {
+                media.addEventListener('loadedmetadata', function() {
+                    if (media.videoWidth > media.videoHeight) {
+                        media.closest('.media-card').classList.add('horizontal');
+                    } else {
+                        media.closest('.media-card').classList.add('vertical');
+                    }
+                });
+
+                if (media.readyState >= 1) {
+                    media.dispatchEvent(new Event('loadedmetadata'));
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More about me</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/profile-picture.png">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .profilemore img {
+            margin-bottom: 10px;
+            background-color: #ffeb3b;
+            padding: 5px;
+            border-radius: 20px;
+        }
+
+        #readme-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            background: #2a2a4b;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: auto; /* Permite rolagem interna */
+            scrollbar-width: thin; /* Esconde a barra de rolagem no Firefox */
+            height: 70vh; /* Ajuste a altura conforme necessário */
+        }
+
+        #readme-container::-webkit-scrollbar {
+            display: none; /* Esconde a barra de rolagem no Chrome/Edge */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="more.html">More</a></li>
+        </ul>
+    </nav>
+    <div class="profilemore">
+        <h1>README.md</h1>
+        <div id="readme-container">Carregando...</div>
+    </div>
+
+    <script>
+        async function loadReadme() {
+            try {
+                const response = await fetch("https://api.github.com/repos/JempUnkn/JempUnkn/readme", {
+                    headers: { "Accept": "application/vnd.github.v3.html" }
+                });
+                if (!response.ok) throw new Error("Erro ao carregar README");
+                const html = await response.text();
+                document.getElementById("readme-container").innerHTML = html;
+            } catch (error) {
+                document.getElementById("readme-container").innerHTML = "<p>Erro ao carregar README.</p>";
+            }
+        }
+
+        loadReadme();
+    </script>
+</body>
+</html>

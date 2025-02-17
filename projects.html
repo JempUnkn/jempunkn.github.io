@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Page</title>
+    <link rel="stylesheet" href="projects-styles.css">
+    <link rel="icon" type="image/png" href="assets/profile-picture.png">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="more.html">More</a></li>
+        </ul>
+    </nav>
+    <div class="projects-section">
+        <h2>Projects</h2>
+        <p>A list of random my projects.</p>
+        <div class="projects-grid">
+            
+            <a href="projects.html" class="project-card">
+                <div class="project-image">
+                    <img src="assets/cook-Empy.gif" alt="Project 5">
+                </div>
+                <h3>Project 5</h3>
+                <p>Let him cook there will be a project in this spot at some point.</p>
+            </a>
+            <a href="#" class="project-card">
+                <div class="project-image">
+                    <img src="assets/Project4.png" alt="Mr Beast">
+                </div>
+                <h3>NEXT PROJECT</h3>
+                <p>Client for Hydra launcher, with support for custom themes, plugins and more.</p>
+            </a>
+            <a href="#" class="project-card">
+                <div class="project-image">
+                    <img src="assets/Project3.png" alt="Music bot">
+                </div>
+                <h3>Discord bot</h3>
+                <p>This is a project that is still in the beta phases, in short, it is an administration BOT where there are exclusive commands made by me.</p>
+            </a>
+            <a href="https://github.com/JempUnkn/SpotMod" class="project-card">
+                <div class="project-image">
+                    <img src="assets/Project2.png" alt="My Website">
+                </div>
+                <h3>SpotMOD</h3>
+                <p>SpotMod is a modified Spotify client that injects Spicetify and adds a unique Marketplace.</p>
+            </a>
+            <a href="https://github.com/JempUnkn/webtv-beta" class="project-card">
+                <div class="project-image">
+                    <img src="assets/Project1.png" alt="Roblox chat bypasser">
+                </div>
+                <h3>WebTV</h3>
+                <p>My first project on Github was a TV channel streaming website using Github pages.</p>
+            </a>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.project-card').forEach(card => {
+            if (!card.getAttribute('href')) {
+                const div = document.createElement('div');
+                div.className = card.className;
+                div.innerHTML = card.innerHTML;
+                card.parentNode.replaceChild(div, card);
+            }
+        });
+    </script>
+</body>
+</html>
